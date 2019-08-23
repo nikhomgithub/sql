@@ -1,0 +1,47 @@
+Branch
+    branch_id : primary key
+    branch_name
+    #-employee (change by situation)
+
+Client
+    client_id : primary key
+    client_name
+
+Employee
+    emp_id : primary key
+    name
+        first_name
+        last_name 
+    birth_date
+    salary
+    sex
+    age (change by year)
+
+    
+    Branch ==1==Workfor ==N==employee
+    (branch has many employee)
+    (employee work for 1 branch)
+
+    Branch ==1==Manage ==1==employee
+    (1 branch has 1 manager employee)
+    (1 manager employee mange 1 branch)
+    
+    Manage
+        branch_id
+        emp_id  
+        start_date 
+    
+    manager employee==1==supervise==N==employee
+    supervise
+        emp_id
+        mgr_id
+
+    client==N==Handle==1==Branch
+    Handle
+        branch_id
+        client_id
+
+    employee==N==Service==M==client
+    Service
+        emp_id
+        client_id

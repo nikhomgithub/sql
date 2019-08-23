@@ -1,0 +1,36 @@
+join = joining many tables but they must have common column
+join to be 1 table
+
+SELECT employee.emp_id,employee.first_name,branch.branch_name;
+FROM employee
+JOIN branch 
+ON employee.emp_id=branch.mgr_id;
+
+-- on is condition of join  
+emp_id  first_name   branch_name
+100     David        Corporate
+102     Michael      Scranton
+103     Josh         Stamford
+
+SELECT employee.emp_id,employee.first_name,branch.branch_name;
+FROM employee    --> this is left table 
+LEFT JOIN branch  --> join with left table (employee)
+ON employee.emp_id=branch.mgr_id;
+
+emp_id  first_name   branch_name
+100     David        Corporate
+102     Michael      Scranton
+103     Josh         Stamford
+104     Peter        NULL
+105     Sam          NULL
+
+SELECT employee.emp_id,employee.first_name,branch.branch_name;
+FROM employee    --> join with right table (branch)
+RIGHT JOIN branch  --> this is right table
+ON employee.emp_id=branch.mgr_id;
+
+emp_id  first_name   branch_name
+100     David        Corporate
+102     Michael      Scranton
+103     Josh         Stamford
+NULL    NULL         Bangkapi

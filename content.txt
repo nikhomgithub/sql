@@ -1,0 +1,90 @@
+ch01 : type of database
+       type of value
+       -- comment
+ch02 : Table
+       CREATE , DROP , DESCRIBE, ALTER, ADD, DROP COLUMN 
+
+ch03 : Mutation
+       INSERT, SELECT, 
+       UPDATE SET WHERE OR 
+       DELETE FROM WHERE OR/AND 
+
+ch4 : Query
+       SELECT FROM 
+       WHERE 
+         IN ('aa','bb')
+         < , > ,<=, >=, <>, AND , OR  
+       ORDER BY DESC/ASC 
+       LIMIT
+
+Project : company_db       
+
+ch05 : 
+    Crete Table
+        Step 1: create employee Table
+        Step 2: create branch Table
+        Step 3: Alter employee Table 
+                add foreign key
+        Step 4: create client Table 
+        Step 5: create work_with table
+        Step 6: create branch_supplier
+
+ch06 : 
+    Insert Data : Since data link to each other, 
+                  it need to do in ORDER
+                  insert primary key + attribute first
+                  update foreign key later
+                  inset composite key last
+        Step 1: insert into employee (super_id=null, branch_id = null)
+        Step 2: insert into branch (mgr_id=null)
+        Step 3: insert into client (branch_id=null)
+        
+        Step 3: update employee set branch_id, super_id
+        Step 4: update employee set super_id
+        Step 5: insert work_with table
+        Step 6: insert Branch_supplier 
+
+
+ch07 :
+    Query
+        SELECT FROM ORDER BY LIMIT WHERE
+        SELECT DISTINCT
+
+ch08 :
+    Function
+        COUNT , AVG, SUM, 
+        COUNT FROM GROUP BY
+
+ch09  :
+    Wild card
+    % = any, 
+    # = characters,
+    _ = one character 
+
+ch10 :
+    UNION
+
+ch11 : 3:02
+    (INNER) JOIN -- cobine 2 table with joining column 
+    LEFT JOIN 
+    RIGHT JOIN
+    FULL JOIN (is LEFT + RIGHT but not support by many sql)
+    (LEFT, RIGHT, INNER are condition)
+
+ch12 : 3:12
+    Nested Query  
+     WHERE IN
+
+ch13 : 3:22
+    ON DELETE NULL
+    ON DELETE CASCADE
+
+ch14 : 3:30
+    CREATE TRIGGER AFTER/BEFORE
+    DELEMETER$$
+    DROP TRIGGER 
+
+ch15 : 3:42
+    ER diagram
+
+ch 16 : 3:56

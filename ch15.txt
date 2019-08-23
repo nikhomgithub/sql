@@ -1,0 +1,44 @@
+
+ER Diagram
+Entity Relation Diagram
+
+student table
+    student_id --> primary key
+    name
+        first_name
+        last_name
+    grade
+    gpa 
+        has_horner
+    clubs 
+
+
+Attribute type
+
+
+Entity = student
+Attribute = name gpa
+Primary key = student_id
+Composite Attribute = fname, last_name
+Multi-valued Attribute = clubs
+Derived Attribute = has_horner from gpa
+
+Multiple Entities = class_id, class_name 
+
+Relationship between Entity = take ( student -take-class )
+
+Participation 
+Partial Participation = single line,  student do not class
+Total Participation = double line,    class need student
+
+take as grade 
+
+Relation Cardinality
+1:1    1 owner has 1 car
+1:N    1 owner has many car
+N:M    1 owner has many car,  car has many owners 
+
+Weak Entity
+Entity depend on other Entity
+
+Owner   >  car   >  Repair Shop (Entity)

@@ -1,0 +1,16 @@
+SELECT * FROM student;
+
+SELECT student.name,student.major
+FROM student
+WHERE major='Bio'
+ORDER BY name DESC;
+
+SELECT student.name,student.major
+FROM student
+WHERE major='Bio'
+ORDER BY name ASC,major DESC
+LIMIT 2;
+-- comment
+-- < , > ,<=, >=, <>, AND , OR 
+
+WHERE name IN ('Kate','MIKE','PETER')

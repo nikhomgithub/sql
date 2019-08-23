@@ -1,0 +1,59 @@
+nested query = join with customer condition 
+===================
+///////////////////
+SELECT employee.emp_id, employee.first_name, employee.last_name
+FROM employee
+WHERE ......> 
+
+
+    SELECT work_with.emp_id
+    FROM work_with
+    WHERE work_with.total_sales > 30000;
+
+    emp_id
+    102
+    103
+    104
+
+------------------
+SELECT employee.emp_id employee.first_name, employee.last_name
+FROM employee
+WHERE employee.emp_id IN ( 
+    SELECT work_with.emp_id
+    FROM work_with
+    WHERE work_with.total_sales > 30000
+)
+
+emp_id   first_name   last_name
+102      'Bill'       'Clin'
+103      'Joe'        'James'
+104      'Jack'       'Spar'
+
+
+=====================
+execc inner first, outter last
+/////////////////////
+SELECT client.client_name
+FROM client
+WHERE client.branch_id ...
+
+
+    SELECT branch.branch_id
+    FROM branch
+    WHERE branch.mgr_id=102
+
+    branch_id
+    2
+
+----------------------
+SELECT client.client_name
+FROM client
+WHERE client.branch_id =(
+    SELECT branch.branch_id
+    FROM branch
+    WHERE branch.mgr_id=102
+    LIMIT 1
+)
+======================
+//////////////////////
+

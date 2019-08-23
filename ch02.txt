@@ -1,0 +1,26 @@
+CREATE , DROP , DESCRIBE, ALTER, ADD, DROP COLUMN 
+
+CREATE TABLE student (          mean to create table
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    major VARCHAR(20)
+);
+
+or 
+
+CREATE TABLE student (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL DEFAULT 'undecided',
+    major VARCHAR(20) UNIQUE,
+    PRIMARY KEY(student_id)
+);
+
+DESCRIBE student;           mean to see table
+
+DROP TABLE student          mean to del table 
+
+ALTER TABLE student         mean to modify table
+ADD gpa DECIMAL(1,2);       add gpa column with format x.xx
+
+ALTER TABLE student         mean to modify Table
+DROP COLUMN gpa;            mean to del column gpa 

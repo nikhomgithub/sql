@@ -1,0 +1,27 @@
+INSERT INTO employee
+VALUES (100,'David','Will','1967-11-17','M',NULL,NULL);
+
+INSERT INTO employee 
+VALUES (101,'Jack','Lev','1961-05-11','M',NULL,NULL);
+.
+.
+
+INSERT INTO branch
+VALUES (1,'Bangkapi', 100, '2006-02-09');
+
+UPDATE employee
+SET branch_id=1
+WHERE emp_id=100
+
+UPDATE employee
+SET super_id=101
+WHERE emp_id=100
+
+INSERT INTO client
+VALUES (901,'Lotus',1);
+
+INSERT INTO work_with
+VALUES (101,901,50000)
+
+INSERT INTO supplier
+VALUES (1,'Siam','Pen')

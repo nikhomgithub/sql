@@ -1,0 +1,18 @@
+SELECT * 
+FROM client
+WHERE client_name LIKE '%LLC';
+
+%LLC mean end with LLC
+
+SELECT *
+FROM employee
+WHERE birth_date LIKE '____-10-__';
+
+birth_date
+____-10-__ mean in october
+
+SELECT *
+FROM client
+WHERE client_name LIKE '%shool%;
+
+any kind of school

@@ -1,0 +1,65 @@
+Trigger
+
+What happen when something happen
+
+==============================
+CREATE TABLE trigger_test(
+    message VARCHAR(100)
+);
+
+
+DELIMETER $$   << change delimeter to be $$
+CREATE 
+    TRIGGER my_trigger BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        INSERT INTO trigger_test 
+        VALUES ('add new employee');  << this is not delimeter here
+    END $$   <<end of sql line, tell by delimeter 
+DELIMETER;   << change delimeter back to be ; as usual
+
+INSERT INTO employee
+VALUES (109,'Oscar','Marl','1962-02-19','M',69000,106,3);
+
+---------------------------
+SELECT * FROM trigger_test;
+'add new employee'
+
+===============================
+///////////////////////////////
+DELIMETER $$
+CREATE
+    TRIGGER my_trigger BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        INSERT INTO trigger_test VALUES(NEW.first_name);
+    END$$
+DELIMETER;
+
+INSERT INTO employee
+VALUES (109,'Oscar','Marl','1962-02-19','M',69000,106,3);
+---------------------------
+SELECT * FROM trigger_test;
+
+============================
+////////////////////////////
+============================
+DELIMETER $$
+CREATE
+    TRIGGER my_trigger AFTER INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        IF NEW.sex='M' THEN
+            INSERT INTO trigger_test VALUES ('added male emp');
+        ELSEIF NEW.sex='F' THEN
+            INSERT INTO trigger_test VALUES ('added female emp');
+        ELSEIF
+            INSERT INTO trigger_test VALUES ('added other');
+        END IF;
+    END$$
+DELIMETERl;
+
+INSERT INTO employee
+VALUES (109,'Oscar','Marl','1962-02-19','M',69000,106,3);
+
+SELECT * FROM trigger_test;

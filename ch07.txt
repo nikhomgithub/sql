@@ -1,0 +1,25 @@
+SELECT *
+FROM employee
+ORDER BY salary DESC;
+
+SELECT * 
+FROM employee
+ORDER By sex, first_name,last_name
+LIMIT 5;
+
+SELECT first_name AS name,last_name AS surname
+FROM employee;
+
+SELECT DISTINCT sex 
+FROM employee;
+# to show what sex we have, M,W only
+
+SELECT DISTINCT branch_id
+FROM employee; 
+
+
+
+
+
+
+

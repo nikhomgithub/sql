@@ -1,0 +1,28 @@
+defind relation table with id
+
+Employee Table
+emp_id(primary key) name branch_id(foreign key to branch table) super_id(foreign key to employee table)
+
+Branch Table
+branch_id(primary key)  branch_name mgr_id(foreign key to employee table)
+
+Branch Supplier Table (composite key, 2 key work to gether to make it unique
+branch_id (compositkey1) supplier_name (composite key2) 
+
+Client Table
+client_id(primary key) client_name branch_id(foreign key)
+
+Work_with Table  >> just to define relationship of table 
+emp_id(foreign key)  client_id(foreign key) total sale
+
+===========================
+
+Type of data
+INT           -whole number
+DECIMAL(M,N)  -Decimal number
+VARCHAR(1)    -string
+BLOB          -binary large object
+DATE          -yyyy-mm-dd
+TIMESTAMP     -yyyy-mm-dd hh:mm:ss
+
+=============================

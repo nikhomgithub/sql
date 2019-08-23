@@ -1,0 +1,37 @@
+find info from many table 
+==================
+SELECT first_name AS name
+FROM employee;
+UNION to show data from diff table in the same column
+
+
+SELECT branch_name AS b-name
+FROM branch;
+SELECT client_name AS c-name
+FROM client
+
+condition
+same number of column
+same type of information
+
+result (every result in one column )
+Nikhom
+Bangkapi
+Toyota
+
+
+
+
+--Find info from 2 talbes
+SELECT client_name, client.branch_id
+FROM client
+UNION
+SELECT supplier_name, branch_supplier.branch_id
+FROM branch_supplier
+
+
+SELECT salary
+FROM employee
+UNION
+SELECT total_sales
+FROM works_with;

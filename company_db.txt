@@ -1,0 +1,30 @@
+Employee Table
+    emp_id (primary key)
+    first_name
+    last_name
+    birth_date
+    sex
+    salary
+    super_id (foreign key)
+    branch_id (foreign key)
+
+Branch Table
+    branch_id (primary key)
+    branch_name
+    mgr_id (foreign key)
+    mgr_start_date
+
+Client Table
+    client_id (primary key)
+    client_name
+    branch_id (foreign key)
+
+Work_with Table
+    emp_id (foreign key) composite key
+    client_id (foreign key) composite key
+    total_sale
+
+Branch Supplier
+    branch_id (foreign key) composite key
+    supplier_name (first_name) composite key
+    supply_item

@@ -1,0 +1,33 @@
+INSERT, SELECT, UPDATE
+
+INSERT INTO student VALUES(  
+    'Jack',
+    'biology'
+);
+
+INSERT INTO student (name)
+VALUES (
+    'Kate'
+);
+
+====================
+
+SELECT * FROM student;      mean to see all column in student
+
+=============================
+UPDATE student
+SET major = 'Bio'
+WHERE major = 'Biology' OR major= 'Chemistry';
+
+
+UPDATE student
+SET major = 'Bio'
+WHERE student_id=4; 
+
+DELETE FROM student
+WHERE student_id=5;
+
+DELETE FROM student
+WHERE name='Tom' AND major='Bio';
+
+
