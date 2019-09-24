@@ -69,7 +69,15 @@ app.get('/addpost1',(req,res)=>{
      });
 });
 
-
+app.get('/addpost2',(req,res)=>{
+     let post = {title:'Post Two', body:'This is post number two'};
+     let sql = 'INSERT INTO posts SET ?';
+     let query = db.query(sql, post, (err,result)=>{
+          if(err) throw err;
+          console.log(result);
+          res.send('post 2 added...');
+     });
+});
 
 const app = express();
 
