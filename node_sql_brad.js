@@ -1,4 +1,5 @@
 /*
+https://www.youtube.com/watch?v=EN6Dx22cPRI
 install XAMPP 
      for Apache server, PHP MyAdmin (For my sql dashboard)
 
@@ -25,7 +26,7 @@ const db = mysql.createConnection({
      database:'nodemysql' //No need in case to need create a database with node
 });
 
-//connect
+//connect to MySql
 db.connect((err)=>{
     if(err){
           throw err;
@@ -54,10 +55,20 @@ app.get('/createposttable',(req,res)=>{
           }
           console.log(result);
           res.send('posts table created...');
-     })
-     
-     
-});, 
+     });   
+});
+
+//Insert data
+app.get('/addpost1',(req,res)=>{
+     let post = {title:'Post One', body:'This is post number one'};
+     let sql = 'INSERT INTO posts SET ?';
+     let query = db.query(sql, post, (err,result)=>{
+          if(err) throw err;
+          console.log(result);
+          res.send('post 1 added...');
+     });
+});
+
 
 
 const app = express();
