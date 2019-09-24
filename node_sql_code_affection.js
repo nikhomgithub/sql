@@ -5,6 +5,8 @@ $npm init -y
 
 $npm install --save mysql express body-parser
 
+$npm install -g nodemon
+
 MySql Workbensh ===>> server for MySql
 
 //create dabase EmployeeDB
@@ -63,11 +65,35 @@ app.get('/employees',(req,res)=>{
   });
 });
 
+//GET employee by id
+app.get('/employee/:id',(req,res)=>{
+  const sql='SELECT * FROM Employee WHERE EmpID = ?';
+  sqlCon.query(sql,[req.params.id],(err,rows,fields)=>{
+    if(!err)
+      res.send(rows);
+      //console.log(rows);
+      //console.log(rows[0].EmpID);
+    else
+      console.log(err);
+  });
+});
+
+
+
+
 
 
 app.listen(3000,(err)=>{
   console.log('Server on port 3000')
 })
+
+
+
+
+
+
+
+
 
 
 
