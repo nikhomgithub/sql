@@ -79,8 +79,16 @@ app.get('/employee/:id',(req,res)=>{
 });
 
 
-
-
+//Delete an employee
+app.delete('/employee/:id',(req,res)=>{
+  const sql = 'DELETE * FROM Employee WHERE EmpID = ? ';
+  sqlCon.query(sql,[req.params.id],(err,rows,fields)=>{
+      if(!err)
+        res.send('Succussfully Deleted ...')
+      else
+        console.log(err)
+  });
+});
 
 
 app.listen(3000,(err)=>{
