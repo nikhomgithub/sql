@@ -79,6 +79,27 @@ app.get('/addpost2',(req,res)=>{
      });
 });
 
+app.get('/getposts,(req,res)=>{
+     let sql = 'SELECT * FROM posts';
+     let query = db.query(sql,(err,result)=>{
+          if(err) throw err;
+          console.log(result);
+          res.send('Post fetched...');
+     });
+});
+
+app.get('/getposts/:id',(req,res)=>{
+     let sql = `SELECT * FROM posts WHERE id = ${req.params.id}`;
+     let query = db.query(sql,(err,result)=>{
+          if(err) throw err;
+          console.log(result);
+          res.send(`Post ${req.params.id} fetch..`)
+     }); 
+});
+
+
+
+
 const app = express();
 
 app.listen('3000',()=>{
